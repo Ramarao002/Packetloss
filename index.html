@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<link rel="icon" href="/favicon.ico" sizes="48x48" type="image/x-icon" />
+	<meta charset="UTF-8" />
+	<meta name="author" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"> -->
+	<link rel="manifest" href="/site.webmanifest">
+	<!-- <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#e2690c"> -->
+	<meta name="msapplication-TileColor" content="#e2690c">
+	<meta name="theme-color" content="#e2690c">
+	<link href="https://fonts.googleapis.com/css?family=Squada+One&display=fallback" rel="preload" as="style">
+	<link href="https://fonts.googleapis.com/css?family=Squada+One&display=fallback" rel="stylesheet">
+	<!-- <link href="/assets/dark_style.min.css" rel="stylesheet" type="text/css" />
+	<link href="/assets/style_en.min.css" rel="stylesheet" type="text/css" /> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+	<title>Speed Monitor</title>
+	<meta name="Description"
+		content="Test your Internet connection for lost packets or high latency to ensure that your gaming and communication is always reliable, all for free in your browser." />
+	<script defer src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"
+		integrity="sha256-Uv9BNBucvCPipKQ2NS9wYpJmi8DTOEfTA/nH2aoJALw=" crossorigin="anonymous"></script>
+	<script defer src="/assets/test_support.terser.js"></script>
+	<script defer src="/assets/script.js"></script>
+	<script defer src="/assets/getdata.js"></script>
+	<!-- <script src="assets/getSpeed.js"></script> -->
+	<style>
+		*,
+		body {
+			position: relative;
+		}
+
+		#progress[open] {
+			display: none !important;
+		}
+
+		#results[open] {
+			/* height: var(--results-height); */
+			height: 100%;
+			background: #ffffff;
+			padding: 20px;
+			/* display: flex !important; */
+			margin-top: 20px;
+			box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .26);
+			border-radius: 10px;
+		}
+
+		#results>div:first-of-type {
+			/* --percentSize: 24px; */
+			--countsSize: 14px;
+			display: flex;
+			/* justify-content: center; */
+			align-items: flex-end;
+			/* text-align: center; */
+			font-size: 12px;
+			/* flex: 1; */
+			justify-content: end;
+			text-align: inherit;
+		}
+
+		#results>div>div>div:first-of-type {
+			font-size: var(--percentSize);
+			color: var(--darkish-tertiary-color);
+			color: #000;
+			font-size: 16px !important;
+			font-weight: 400;
+			margin-left: 10px;
+		}
+
+		#results .counts {
+			font-size: var(--countsSize);
+			color: var(--darkish-tertiary-color);
+			display: none;
+		}
+
+		.ltecy-block {
+			position: absolute;
+			top: 48px;
+			left: 38%;
+			text-align: center;
+			display: inline-block;
+		}
+
+		.shine {
+			background: #f6f7f8;
+			background-image: linear-gradient(to right, #f6f7f8 0%, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+			background-repeat: no-repeat;
+			background-size: 800px 104px;
+			display: inline-block;
+			position: relative;
+
+			-webkit-animation-duration: 1s;
+			-webkit-animation-fill-mode: forwards;
+			-webkit-animation-iteration-count: infinite;
+			-webkit-animation-name: placeholderShimmer;
+			-webkit-animation-timing-function: linear;
+		}
+
+		@-webkit-keyframes placeholderShimmer {
+			0% {
+				background-position: -468px 0;
+			}
+
+			100% {
+				background-position: 468px 0;
+			}
+		}
+
+		.sm_box {
+			width: 237px;
+			height: 121px;
+			margin-bottom: 20px;
+			margin-left: 15px;
+			margin-right: 15px;
+		}
+
+		.lg_box {
+			width: 770px;
+			height: 100px;
+		}
+
+		/* span#latency {
+			display: block;
+		} */
+
+		#results p+p,
+		p~ul {
+			margin-top: -10px;
+			/* float: right; */
+			position: absolute;
+			top: 58px;
+			right: 58px;
+			text-align: center;
+		}
+
+		.display_speed {
+			font-size: 20px;
+			min-height: 20px;
+		}
+
+		.img-load img {
+			width: 25px;
+			position: absolute;
+			top: 50px;
+			right: 0;
+		}
+
+		.App {
+			margin-top: 100px;
+		}
+
+		.ag-theme-alpine {
+			height: calc(100vh - 300px);
+			margin-top: 50px;
+		}
+
+		.ip_block {
+			display: flex;
+			text-align: center;
+			margin-top: 40px;
+		}
+
+		.ip_addr {
+			flex: 1;
+		}
+
+		.isp_info {
+			flex: 1;
+		}
+
+		.ip_txt,
+		.isp_txt {
+			font-size: 20px;
+			font-weight: 900;
+		}
+
+		th {
+			text-align: inherit;
+			width: 20%;
+			background: #f1f1f1f1;
+			padding: 5px;
+		}
+
+		#packetLoss {
+			display: flex;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container" style="margin-top: 100px; max-width: 800px;">
+
+		<div class="row">
+			<box class="shine sm_box"></box>
+			<div class="col-md-4 loader" style="display: none;">
+				<div class="card">
+					<div class="card-header">Download speed</div>
+					<div class="card-body">
+						<div class="display_speed">
+							<div class="downSpeed"></div>
+						</div>
+						<!-- <div class="img-load">
+							<img src="45.gif" style="display: block;" alt="loading" />
+						</div> -->
+
+					</div>
+				</div>
+			</div>
+			<box class="shine sm_box" style="position: absolute;right: 0;"></box>
+			<div class="col-md-4  loader" style="position: absolute;right: 0;display: none;">
+				<div class="card">
+					<div class="card-header">Upload speed</div>
+					<div class="card-body">
+						<div class="display_speed">
+							<div class="upSpeed"></div>
+						</div>
+						<!-- <div class="img-load">
+							<img src="45.gif" style="display: block;" alt="loading" />
+						</div> -->
+					</div>
+				</div>
+			</div>
+			<!-- <div class="col-md-4">
+				<div class="card">
+				  <div class="card-header">Jitter</div>
+				  <div open id="results" class="card-body">
+					<div class="display_speed">
+					  <div id="jitter"></div>
+					</div>
+					<div class="img-load">
+					  <img src="45.gif" style="display: block;" alt="loading" />
+					</div>
+				  </div>
+				</div>
+			  </div> -->
+			<!-- <div class="col-md-2">
+				<div class="card">
+				  <div class="card-header">Latency</div>
+				  <div open id="results" class="card-body">
+					<div class="display_speed">
+					  <div id="latency"></div>
+					</div>
+					<div class="img-load">
+					  <img src="45.gif" style="display: block;" alt="loading" />
+					</div>
+				  </div>
+				</div>
+			  </div>  -->
+			<!-- <div class="col-md-2">
+				<div class="card">
+				  <div class="card-header">Packet loss</div>
+				  <div open id="results" class="card-body">
+					<div class="display_speed">
+						<div id="packetLoss">
+							<div><span class="percent"></span>%</div>
+						</div>
+					</div>
+					<div class="img-load">
+					  <img src="45.gif" style="display: block;" alt="loading" />
+					</div>
+				  </div>
+				</div>
+			  </div> -->
+		</div>
+		<box class="shine lg_box"></box>
+		<details open id="results" style="display: none;">
+			<summary>Packet Loss Information</summary>
+			<div>
+				<div id="upload" style="display: none;">
+					<b>Upload Packet Loss</b>
+					<div><span class="percent"></span>%</div>
+					<div class="counts"></div>
+				</div>
+				<div id="packetLoss">
+					<b style="font-size:16px;">Packet Loss</b>
+					<div><span class="percent pc_pcnt"></span>%</div>
+					<div class="counts"></div>
+				</div>
+				<div id="download" style="display: none;">
+					<b>Download Packet Loss</b>
+					<div><span class="percent"></span>%</div>
+					<div class="counts"></div>
+				</div>
+				<div id="late" style="display: none;">
+					<b>Late Packets</b>
+					<div><span class="percent"></span>%</div>
+					<div class="counts"></div>
+				</div>
+			</div>
+			<p class="ltecy-block"><b> Latency:</b> <span id="latency"></span><span style="margin-left: 10px;">
+					ms</span></p>
+			<p><b> Jitter:</b> <span id="jitter"></span><span style="margin-left: 10px;"> ms</span></p>
+			<div style="display: none !important;">
+				<span id="acceptable-delay-term">Acceptable Delay</span>
+				<span id="response-time-term">Response Time</span>
+				<span id="packet-term">Packet</span>
+				<span id="ms-term">ms</span>
+			</div>
+			<div id="chartContainer" style="display: none !important;">
+				<canvas id="chart"></canvas>
+			</div>
+			<!-- <p><a href="/interpreting-results">Is this a good result?</a></p>
+				<p><a href="/causes">What causes packet loss?</a></p>
+				<p><a href="/fixing">How to fix packet loss</a></p> -->
+			<p id="download-results" style="display: none;">Download results as: <a id="download-csv">CSV</a>, <a
+					id="download-csv-with-summary">CSV w/ summary</a>, <a id="download-json">JSON</a></p>
+			<!-- <p class="donate"><a href="https://paypal.me/mminer237?locale.x=en_US">Like the site? Consider donating!</a><p> -->
+		</details>
+		<div class="ip_block">
+			<div class="ip_addr"><span class="ip_txt">Your IP: </span><span class="ip_data"></span></div>
+			<div class="isp_info"><span class="isp_txt">Your ISP: </span><span class="isp_data"></span></div>
+		</div>
+		<div class="grid_start">
+			<table border="1" style="border: solid 1px black;width: 100%;
+			  margin-top: 40px;">
+				<tr>
+					<th>Down Speed</th>
+					<th>Up Speed</th>
+					<th>Latency</th>
+					<th>Jitter</th>
+					<th>Packet Loass</th>
+					<th>ISP</th>
+					<th>Time</th>
+				</tr>
+			</table>
+		</div>
+
+	</div>
+
+	<div class="content-container">
+		<main>
+			<details open id="about" style="display: none;">
+				<summary>test</summary>
+
+			</details>
+			<details open id="settings" style="display: none;">
+				<summary>Test Settings</summary>
+				<form>
+					<label for="sizeSlider">Packet Sizes:</label>
+					<span id="sizeNumber">1112 and 1128</span> Bytes
+					<input type="text" min="35" max="2333" id="sizeSlider" value="1005"
+						oninput="sizeNumber.innerHTML = `${parseInt(sizeSlider.value) + 107} and ${parseInt(sizeSlider.value) + 123}`; updatePredictedUse();"
+						>
+				</form>
+				<form>
+					<label for="frequencySlider">Frequency:</label>
+					<span id="frequencyNumber">15</span> Pings&#x2F;Second
+					<input type="text" min="1" max="300" id="frequencySlider" value="15"
+						oninput="frequencyNumber.innerHTML = frequencySlider.value; updatePredictedUse();"
+						>
+				</form>
+				<form>
+					<label for="durationSlider">Duration:</label>
+					<span id="durationNumber">10</span> Seconds
+					<input type="text" min="1" max="180" id="durationSlider" value="10"
+						oninput="durationNumber.innerHTML = durationSlider.value; updatePredictedUse();"
+						>
+				</form>
+				<form>
+					<label for="waitSlider">Acceptable Delay:</label>
+					<span id="waitNumber">200</span> Milliseconds
+					<input type="text" min="1" max="1000" id="waitSlider" value="200"
+						oninput="waitNumber.innerHTML = waitSlider.value;"
+						>
+				</form>
+				<form>
+					<label for="preset">Or Select a Preset Approximation:</label>
+					<select id="preset">
+						<option data-size="505" data-frequency="78" data-wait="300" data-duration="10">Default</option>
+						
+					</select>
+				</form>
+				<form>
+					<input type="checkbox" id="delayedStart" name="delayedStart" value="2">
+					<label for="delayedStart">Wait <span id="delayedStartNumber">2</span> seconds before recording
+						results?</label>
+				</form>
+				<p>Using:
+					<select name="server" id="server">
+						<option value="wss://lau.packetlosstest.com/ws">Australia</option>
+					</select>
+					Server</p>
+				<p>This will send a total of <span id="totalPingsReason"><span id="totalPings">149</span> ping<span
+							id="totalPingsPluralizer">s</span></span> and use <span id="totalData">15.4 KB</span> of
+					data.</p>
+				<p id="usageStopMessage">Uh, sorry, but <span id="pingsThatAreTooMany"></span><span
+						class="usageThatIsTooMuchAnd"> and </span><span id="dataThatIsTooMuch"></span> is a bit too
+					intense of testing. I&#39;m not exactly made of money for hosting here, and I really doubt you need
+					this intense of testing. You can always run multiple tests if you need to.<span
+						id="tooManyPingsMessage"> Also, my circle thingies tend to break trying to draw this many
+						pings.</span></p>
+			</details>
+			<div id="startDiv" style="display: none;">
+				<button id="start"></button>
+			</div>
+			<details open id="progress" style="display: none !important;">
+				<summary>Progress</summary>
+				<div>
+					<div>
+						<h3>Sent</h3>
+						<sent-circle-thingy></sent-circle-thingy>
+					</div>
+					<div>
+						<h3>Time</h3>
+						<time-circle-thingy></time-circle-thingy>
+					</div>
+					<div>
+						<h3>Received</h3>
+						<received-circle-thingy></received-circle-thingy>
+					</div>
+				</div>
+			</details>
+
+			<section id="errorSection" style="display: none;">
+				<h2>Error</h2>
+				<div id="errorContent"></div>
+			</section>
+		</main>
+	</div>
+
+
+</body>
+
+</html>

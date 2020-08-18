@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+	xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+	xmlns:xhtml="http://www.w3.org/1999/xhtml">
+	<url>
+		<loc>https://packetlosstest.com/</loc>
+		<xhtml:link
+			rel="alternate"
+			hreflang="fa"
+			href="https://fa.packetlosstest.com/" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="it"
+			href="https://it.packetlosstest.com/" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="de"
+			href="https://de.packetlosstest.com/" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="pt"
+			href="https://pt.packetlosstest.com/" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="ru"
+			href="https://ru.packetlosstest.com/" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="en"
+			href="https://packetlosstest.com/" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="zh"
+			href="https://zh.packetlosstest.com/" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="id"
+			href="https://id.packetlosstest.com/" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="hi"
+			href="https://hi.packetlosstest.com/" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="ro"
+			href="https://ro.packetlosstest.com/" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="fr"
+			href="https://fr.packetlosstest.com/" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="es"
+			href="https://es.packetlosstest.com/" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="tlh"
+			href="https://tlh.packetlosstest.com/" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="tr"
+			href="https://tr.packetlosstest.com/" />
+	</url>
+	<url>
+		<loc>https://packetlosstest.com/simple</loc>
+		<xhtml:link
+			rel="alternate"
+			hreflang="it"
+			href="https://it.packetlosstest.com/simple" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="de"
+			href="https://de.packetlosstest.com/simple" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="pt"
+			href="https://pt.packetlosstest.com/simple" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="ru"
+			href="https://ru.packetlosstest.com/simple" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="fr"
+			href="https://fr.packetlosstest.com/simple" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="es"
+			href="https://es.packetlosstest.com/simple" />
+	</url>
+	<url>
+		<loc>https://packetlosstest.com/interpreting-results</loc>
+		<xhtml:link
+			rel="alternate"
+			hreflang="it"
+			href="https://it.packetlosstest.com/interpreting-results" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="de"
+			href="https://de.packetlosstest.com/interpreting-results" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="pt"
+			href="https://pt.packetlosstest.com/interpreting-results" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="ru"
+			href="https://ru.packetlosstest.com/interpreting-results" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="fr"
+			href="https://fr.packetlosstest.com/interpreting-results" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="es"
+			href="https://es.packetlosstest.com/interpreting-results" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="tr"
+			href="https://tr.packetlosstest.com/interpreting-results" />
+	</url>
+	<url>
+		<loc>https://packetlosstest.com/webrtc</loc>
+		<xhtml:link
+			rel="alternate"
+			hreflang="it"
+			href="https://it.packetlosstest.com/webrtc" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="de"
+			href="https://de.packetlosstest.com/webrtc" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="pt"
+			href="https://pt.packetlosstest.com/webrtc" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="ru"
+			href="https://ru.packetlosstest.com/webrtc" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="fr"
+			href="https://fr.packetlosstest.com/webrtc" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="es"
+			href="https://es.packetlosstest.com/webrtc" />
+	</url>
+	<url>
+		<loc>https://packetlosstest.com/technology</loc>
+		<xhtml:link
+			rel="alternate"
+			hreflang="it"
+			href="https://it.packetlosstest.com/technology" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="de"
+			href="https://de.packetlosstest.com/technology" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="pt"
+			href="https://pt.packetlosstest.com/technology" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="ru"
+			href="https://ru.packetlosstest.com/technology" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="fr"
+			href="https://fr.packetlosstest.com/technology" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="es"
+			href="https://es.packetlosstest.com/technology" />
+	</url>
+	<url>
+		<loc>https://packetlosstest.com/latency</loc>
+		<xhtml:link
+			rel="alternate"
+			hreflang="it"
+			href="https://it.packetlosstest.com/latency" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="de"
+			href="https://de.packetlosstest.com/latency" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="pt"
+			href="https://pt.packetlosstest.com/latency" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="ru"
+			href="https://ru.packetlosstest.com/latency" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="fr"
+			href="https://fr.packetlosstest.com/latency" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="es"
+			href="https://es.packetlosstest.com/latency" />
+	</url>
+	<url>
+		<loc>https://packetlosstest.com/jitter</loc>
+		<xhtml:link
+			rel="alternate"
+			hreflang="it"
+			href="https://it.packetlosstest.com/jitter" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="de"
+			href="https://de.packetlosstest.com/jitter" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="pt"
+			href="https://pt.packetlosstest.com/jitter" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="ru"
+			href="https://ru.packetlosstest.com/jitter" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="fr"
+			href="https://fr.packetlosstest.com/jitter" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="es"
+			href="https://es.packetlosstest.com/jitter" />
+	</url>
+	<url>
+		<loc>https://packetlosstest.com/about</loc>
+		<xhtml:link
+			rel="alternate"
+			hreflang="it"
+			href="https://it.packetlosstest.com/about" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="de"
+			href="https://de.packetlosstest.com/about" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="pt"
+			href="https://pt.packetlosstest.com/about" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="ru"
+			href="https://ru.packetlosstest.com/about" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="fr"
+			href="https://fr.packetlosstest.com/about" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="es"
+			href="https://es.packetlosstest.com/about" />
+	</url>
+	<url>
+		<loc>https://packetlosstest.com/packet-loss</loc>
+		<xhtml:link
+			rel="alternate"
+			hreflang="it"
+			href="https://it.packetlosstest.com/packet-loss" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="de"
+			href="https://de.packetlosstest.com/packet-loss" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="pt"
+			href="https://pt.packetlosstest.com/packet-loss" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="ru"
+			href="https://ru.packetlosstest.com/packet-loss" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="fr"
+			href="https://fr.packetlosstest.com/packet-loss" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="es"
+			href="https://es.packetlosstest.com/packet-loss" />
+	</url>
+	<url>
+		<loc>https://packetlosstest.com/fixing</loc>
+		<xhtml:link
+			rel="alternate"
+			hreflang="it"
+			href="https://it.packetlosstest.com/fixing" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="de"
+			href="https://de.packetlosstest.com/fixing" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="pt"
+			href="https://pt.packetlosstest.com/fixing" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="ru"
+			href="https://ru.packetlosstest.com/fixing" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="fr"
+			href="https://fr.packetlosstest.com/fixing" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="es"
+			href="https://es.packetlosstest.com/fixing" />
+	</url>
+	<url>
+		<loc>https://packetlosstest.com/causes</loc>
+		<xhtml:link
+			rel="alternate"
+			hreflang="it"
+			href="https://it.packetlosstest.com/causes" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="de"
+			href="https://de.packetlosstest.com/causes" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="pt"
+			href="https://pt.packetlosstest.com/causes" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="ru"
+			href="https://ru.packetlosstest.com/causes" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="fr"
+			href="https://fr.packetlosstest.com/causes" />
+		<xhtml:link
+			rel="alternate"
+			hreflang="es"
+			href="https://es.packetlosstest.com/causes" />
+	</url>
+	<url>
+		<loc>https://packetlosstest.com/changelog</loc>
+	</url>
+	<url>
+		<loc>https://packetlosstest.com/licensing</loc>
+	</url>
+</urlset>

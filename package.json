@@ -1,0 +1,36 @@
+{
+  "name": "packetlosstest",
+  "homepage": "https://packetlosstest.com",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "description": "A website to test packet loss in the browser",
+  "repository": "github:mminer237/packetlosstest",
+  "main": "app.js",
+  "private": true,
+  "dependencies": {
+    "chalk": "^2.3.0",
+    "express": "^4.17.1",
+    "forever-monitor": "^3.0.0",
+    "log-symbols": "^2.2.0",
+    "log-update": "^2.3.0",
+    "meow": "^5.0.0",
+    "node": "^14.4.0",
+    "npm": "^6.14.5",
+    "ora": "^3.1.0",
+    "round-to": "^3.0.0",
+    "sirv": "^0.4.2",
+    "speedtest-net": "^1.6.2",
+    "uWebSockets.js": "github:uNetworking/uWebSockets.js#v17.4.0",
+    "update-notifier": "^2.3.0",
+    "wrtc": "^0.4.5"
+  },
+  "devDependencies": {
+    "csso-cli": "^3.0.0",
+    "mustache": "^4.0.1"
+  },
+  "scripts": {
+    "build": "chmod a+x pages/render.bash && pages/render.bash",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matthew Miner <mminer237@gmail.com> (https://matthewminer.name)"
+}

@@ -1,0 +1,31 @@
+@media (prefers-color-scheme: dark) {
+	:root {
+		--lightish-tertiary-color: var(--tertiary-color);
+	}
+	body {
+		/* background-color: #462002; */
+		background-color: hsl(26, 88%, 15%);
+		color: #eee;
+	}
+	details, section, footer {
+		/* background-color: hsl(39, 88%, 17%); */
+		background-color: #573606;
+	}
+	a:active, a.current-page, button:hover, nav a:hover {
+		background-color: hsl(357, 66%, 40%);
+	}
+	button, nav a {
+		background-color: var(--darkish-tertiary-color);
+		box-shadow: 0 2px 5px 0 rgba(0,0,0,0.66);
+	}
+	details {
+		box-shadow: 0 2px 5px 0 rgba(0,0,0,0.66);
+	}
+	input[type=range]::-webkit-slider-thumb, input[type=range]::-moz-range-thumb, input[type=range]::-ms-thumb {
+		background-color: hsl(357, 66%, 50%);
+		box-shadow: 0 2px 5px 0 rgba(0,0,0,0.76);
+	}
+	#start {
+		filter: brightness(.9);
+	}
+}

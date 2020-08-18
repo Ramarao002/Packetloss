@@ -1,0 +1,1 @@
+"use strict";self.onmessage=e=>((e,a)=>{let s=performance.now();const t=s+a;let n=s+e;for(;s<t;)s>=n&&(postMessage({send:!0}),n+=e),s=performance.now()})(e.data.interval,e.data.duration);
